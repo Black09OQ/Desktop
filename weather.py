@@ -25,6 +25,6 @@ WMO_load = json.load(WMO_open)
 
 weathercode = weather_load['hourly']['weathercode'][dt_now.hour + 1]
 
-weather = WMO_load[weathercode]
+weather = WMO_load[str(weathercode)]
 
 print(weather)
