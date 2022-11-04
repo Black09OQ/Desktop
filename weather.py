@@ -28,9 +28,9 @@ weathercode = weather_load['hourly']['weathercode'][dt_now.hour + 1]
 
 weather = WMO_load[str(weathercode)]
 
-temp = []
+temp = ""
 
 for i in weather:
-    dict.dict{i}
+    temp += dict.dict{i}
 
-print(weather)
+print(temp)
