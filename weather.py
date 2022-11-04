@@ -3,6 +3,10 @@ import datetime
 import requests
 import json
 import dict
+import math
+from grove_rgb_lcd import *
+from grovepi import *
+
 
 url = "https://api.open-meteo.com/v1/forecast?latitude=34.70&longitude=135.49&hourly=weathercode&timezone=Asia%2FTokyo"
 
