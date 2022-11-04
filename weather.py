@@ -1,6 +1,7 @@
 import datetime
 import requests
 import json
+import dict
 
 url = "https://api.open-meteo.com/v1/forecast?latitude=34.70&longitude=135.49&hourly=weathercode&timezone=Asia%2FTokyo"
 
@@ -26,5 +27,10 @@ WMO_load = json.load(WMO_open)
 weathercode = weather_load['hourly']['weathercode'][dt_now.hour + 1]
 
 weather = WMO_load[str(weathercode)]
+
+temp = []
+
+for i in weather:
+    dict.dict{i}
 
 print(weather)
