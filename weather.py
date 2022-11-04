@@ -1,12 +1,12 @@
 import datetime
-# import requests
+import requests
 import json
 
-""" url = "https://api.open-meteo.com/v1/forecast?latitude=34.70&longitude=135.49&hourly=weathercode&timezone=Asia%2FTokyo"
+url = "https://api.open-meteo.com/v1/forecast?latitude=34.70&longitude=135.49&hourly=weathercode&timezone=Asia%2FTokyo"
 
 res = requests.get(url)
 res = res.text
-res = json.loads(res) """
+res = json.loads(res)
 
 
 # 現在時刻を取得
