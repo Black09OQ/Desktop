@@ -16,26 +16,36 @@ res = json.loads(res)
 
 grovepi.set_bus("RPI_1")
 
+time = 25
 
-# 現在時刻を取得
-dt_now = datetime.datetime.now()
+while True:
+    
+        # 現在時刻を取得
+    dt_now = datetime.datetime.now()
+    
+    while time == dt_now.hour:
+        pass
+        
 
 
+    # WMOcodeJsonを読み込み
+    WMO_open = open("WMO.json","r")
+    WMO_load = json.load(WMO_open)
 
-# WMOcodeJsonを読み込み
-WMO_open = open("WMO.json","r")
-WMO_load = json.load(WMO_open)
 
+    weathercode = res['hourly']['weathercode'][dt_now.hour + 1]
 
-weathercode = res['hourly']['weathercode'][dt_now.hour + 1]
+    weather = WMO_load[str(weathercode)]
 
-weather = WMO_load[str(weathercode)]
+    temp = ""
 
-temp = ""
+    for i in weather:
+        temp += dict.dict[i]
 
-for i in weather:
-    temp += dict.dict[i]
+    print(temp)
 
-print(temp)
-
-setText(temp)
+    setText(temp)
+    setCursor(0,1)
+    setText(f"{dt_now.hour}:00 update")
+    
+    time = dt_now.hour
